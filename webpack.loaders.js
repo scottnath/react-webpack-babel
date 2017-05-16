@@ -1,8 +1,14 @@
+var path = require('path');
+
 module.exports = [
   {
     test: /\.jsx?$/,
-    exclude: /(node_modules|bower_components|public\/)/,
-    loader: "babel-loader"
+    exclude: /(bower_components|public\/)/,
+    loader: "babel-loader",
+    include: [
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './node_modules/pattern-figure-image'),
+    ],
   },
   {
     test: /\.css$/,
